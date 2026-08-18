@@ -4,34 +4,104 @@
     <meta charset="utf-8">
     <title>MisuteriG</title>
     <style>
-        body {background-color: rgb(0, 0, 0);
+        
+        * {
+            box-sizing: border-box;
+        }
+        body {background: #020024;
+            background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(16, 16, 105, 1) 40%, rgba(0, 22, 26, 1) 100%);
+            margin: 0;
             color: antiquewhite;
-            font-family: sans-serif;}
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;}
         a {color: aliceblue;
             text-decoration: none;}
         a:hover {text-decoration: underline;}
-        .container {display: flex;
+        .container {
+            display: flex;
+            flex-grow: 1; 
             flex-wrap: wrap;}
-        .navbar {
-            width: 100%;
-            text-align: center;
-            padding: 1.5px 0;
-            border-top: 1px solid antiquewhite;
-            border-bottom: 1px solid antiquewhite;
-            margin-bottom: 1px;
+
+        .imagebar {
+            display: flex;
+            flex-wrap: wrap;
         }
-        .navbar a {
-            margin: 0 20px; 
-            letter-spacing: 5px; 
-            position: relative; 
+        #navbar-container {
+            position: relative;
+            width: 100%;
+            height: 30px; 
+            background-image: url('Data/newbar.png');
+            background-size: 100% 100%; 
+        }
+        .banner-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .widget-header {
+            background: #000000;
+            background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(87, 87, 87, 1) 50%, rgba(61, 61, 61, 1) 100%);
+            padding: 10px 15px;
+            margin: -15px -15px 15px -15px; 
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .widget-header h2, .widget-header h3 {
+            margin: 0;
+        }
+
+        #navbar-links {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #navbar-links a {
+            text-align: center; 
+            letter-spacing: 0px; 
+            margin: 0 50px; 
+            font-family: 'Segoe UI', Calibri, Arial, sans-serif; 
+            font-size: 16px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); 
+        }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .social-column {
+            width: 20%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .main-content {
+            width: 80%;
+            padding: 10px;
         }
         .left-column, .right-column {width: 50%;
-            padding: 1.5px;
+            padding: 5px;
             box-sizing: border-box;}
         @media (max-width: 768px) {
-            .left-column, .right-column {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            .social-column, .main-content, .left-column, .right-column {
                 width: 100%;
-            }}
+            }
+            #navbar-links a {
+                margin: 0 15px; 
+                letter-spacing: 2px;
+            }
+            .releases-container {
+                max-width: 100%; 
+            }
+        }
         hr {
             border-color: antiquewhite;
         }
@@ -40,107 +110,227 @@
             padding: 20px;
         }
         iframe {
-            width: 70%;
+            width: 85%;
             aspect-ratio: 16 / 9;
+        }
+        .releases-container {
+            max-width: 1030px;
+            margin: 0 auto; 
+            overflow: hidden; 
+        }
+        .releases-grid {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 20px;
+            animation: auto-scroll 30s linear infinite;
+        }
+        .releases-container:hover .releases-grid {
+            animation-play-state: paused; 
+        }
+        @keyframes auto-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-170px * 8)); 
+            }
+        }
+        .release-item {
+            width: 150px;
+            text-align: center;
+            flex-shrink: 0; 
+        }
+        .release-item img {
+            width: 100%;
+            border: 1px solid antiquewhite;
+        }
+        .release-item p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .widget-box {
+            flex-grow: 1; 
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px; 
+            padding: 15px; 
+            margin-bottom: 15px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px); 
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+        }
+        .widget-box h2, .widget-box h3 {
+            margin-top: 0;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        }
+        .left-column, .right-column {
+            display: flex; 
+            flex-direction: column;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="Data/mgbanner.png" alt="MisuteriG" width="100%">
-        <nav class="navbar">
-            <a href="https://misuterig.dpdns.org/">HEIM</a>
-            <a href="merchs.html">PRODUKTS</a>
-            <a href="#">CONTAKTS</a>
-        </nav>
-        <div class="left-column">
-            
-            <p>Vietnamese Electronic music producer</p>
-            <p>(Vaporwave/Synthwave/Chillwave/Twilight Synth)</p>
-            <br>
-            <p>MUSIC PROJECT: ‎  M ‎ I ‎ S ‎ U ‎ T ‎ E ‎ R ‎ I ‎ G</p>
-            <div class="container">
-            <div class="left-column">
-                <p><a href="https://misuterig.bandcamp.com/">†Bandcamp彡</a></p>
-                <p><a href="https://www.youtube.com/@misuterighxts">†YouTube彡</a></p>
-                <p><a href="https://soundcloud.com/misuterig">†Soundcloud彡</a></p>
-                <p><a href="https://open.spotify.com/artist/6BQimmIokPrjA9eVdGrApH">†Spotify彡</a></p>
+        <div style="width: 100%;">
+            <img src="Data/mgbanner.png" alt="MisuteriG" class="banner-image">
+            <div id="navbar-container">
+                <div id="navbar-links">
+                    <a href="index.html">Home</a>
+                    <a href="merchs.html">Merch</a>
+                    <a href="https://www.instagram.com/bgtj.vobaogia/">Art archive</a>
+                    <a href="#">About</a>
+                </div>
             </div>
-            <div class="right-column">
-                <p><a href="https://www.facebook.com/misuterig">†Facebook彡</a></p>
-                <p><a href="https://discord.com/invite/wvKNKYUg5K">†Discord彡</a></p>
-                <p><a href="https://www.instagram.com/misuterig/">†Instagram彡</a></p>
-                <p><a href="https://x.com/MisuteriGhxts">†Twitter彡</a></p>
-            </div>
-            </div>
-            
-            <p>MUSIC PROJECT: ‎  9 ‎ G ‎ 1 ‎ 8 </p>
-            <p><a href="https://soundcloud.com/9g18">†Soundcloud彡</a></p>
-            <p><a href="https://open.spotify.com/artist/5OpIakEPfR9bHHybBOYwqt">†Spotify彡</a></p>
-            <p><a href="https://www.youtube.com/watch?v=Jywstem-Z0k">†Đoàn Tàu Ngoài Xa彡</a></p>
-
-            <br>
-
-            <p>OTHERS:</p>
-            <p><a href="https://www.youtube.com/@VaporwaveTech%E5%BD%A1">†VaporTech彡</a></p>
-            
-            
         </div>
-        <div class="right-column">
-            <h2>Latest Release</h2>
-            <!---
-            <p><em>MisuteriG & 9G18 - Dưới chân đồi</em></p>
-            
-            <div style="text-align: center;"><iframe src="https://www.youtube.com/embed/WQzGRQzMRxI"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                --->
-
-            
-            <div style="text-align: center;"><img src="https://i.ibb.co/YTRDPnMR/B-n-sao-c-a-PLAN-MIDI-PAD-1.png" alt="MisuteriG" width="100%" height="100%"></div>
-            <br>
-            <p style="text-align: left;"><em>9G18 - Đoàn Tàu Ngoài Xa (Cassette Release)</em></p>
-            <div style="text-align: center;"><img src="Data/DTNX1.png" alt="MisuteriG" width="16%" height="16%"> <img src="Data/DTNX2.png" alt="Earth" width="16%" height="16%"><img src="Data/DTNX3.jpg" alt="MisuteriG" width="16%" height="16%"> <img src="Data/DTNX4.jpeg" alt="Earth" width="16%" height="16%"></div>
-            <p style="text-align: center;"><a href="https://sudswapaudiobrewing.bandcamp.com/album/o-n-t-u-ngo-i-xa">!!! BUY CASSETTE FROM SUD SWAP AUDIO !!!</a></p>
-            <!---
-            <p style="text-align: left;"><em>MisuteriG - i486 (Floppy Disk Release)</em></p>
-            <img src="Data/i4861.jpg" alt="MisuteriG" width="16%" height="16%"> <img src="Data/i4862.jpg" alt="Earth" width="16%" height="16%"><img src="Data/i4863.jpg" alt="MisuteriG" width="16%" height="16%"> <img src="Data/i4864.jpg" alt="Earth" width="16%" height="16%"></div>
-            <p style="text-align: center;"><a href="https://sudswapaudiobrewing.bandcamp.com/album/i486">!!! BUY FLOPPY DISK FROM SUD SWAP AUDIO !!!</a></p>
-            --->
-            
+        <div class="content-wrapper">
+            <div class="social-column">
+                <div class="widget-box">
+                    <div class="widget-header">
+                        <h2>LINKS</h2>
+                    </div>
+                    
+                    <h3><b>MisuteriG:</b></h3>
+                    <p><a href="https://misuterig.bandcamp.com/">Bandcamp</a></p>
+                    <p><a href="https://www.youtube.com/@misuterighxts">YouTube</a></p>
+                    <p><a href="https://soundcloud.com/misuterig">Soundcloud</a></p>
+                    <p><a href="https://open.spotify.com/artist/6BQimmIokPrjA9eVdGrApH">Spotify</a></p>
+                    <p><a href="https://www.facebook.com/misuterig">Facebook</a></p>
+                    <p><a href="https://discord.com/invite/wvKNKYUg5K">Discord</a></p>
+                    <p><a href="https://www.instagram.com/misuterig/">Instagram</a></p>
+                    <p><a href="https://x.com/MisuteriGhxts">Twitter</a></p>
+                    <br>
+                    <h3><b>9G18:</b></h3>
+                    <p><a href="https://soundcloud.com/9g18">Soundcloud</a></p>
+                    <p><a href="https://open.spotify.com/artist/5OpIakEPfR9bHHybBOYwqt">Spotify</a></p>
+                </div>
+                <div class="widget-box">
+                    <div class="widget-header">
+                        <h2>WARNING</h2>
+                    </div>
+                    <p>!!!This website is not optimize for mobile. Use it at your own risk!!!</p>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="container">
+                    <div class="left-column">
+                        <div class="widget-box">
+                            <div class="widget-header">
+                                <h2>Latest Digital Release</h2>
+                            </div>
+                            <h3>MisuteriG & 9G18 - Dưới chân đồi</h3>
+                            <div style="text-align: center;"><iframe src="https://www.youtube.com/embed/WQzGRQzMRxI"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <div class="widget-box">
+                            <div class="widget-header">
+                                <h2>Latest Physical Release</h2>
+                            </div>
+                            <h3>9G18 - Đoàn Tàu Ngoài Xa</h3>
+                            <div style="text-align: center;"><img src="Data/DTNX1.png" alt="MisuteriG" width="20%" height="20%"> <img src="Data/DTNX2.png" alt="Earth" width="20%" height="20%"><img src="Data/DTNX3.jpg" alt="MisuteriG" width="20%" height="20%"> <img src="Data/DTNX4.jpeg" alt="Earth" width="20%" height="20%"></div>
+                            <p style="text-align: center;"><a href="https://sudswapaudiobrewing.bandcamp.com/album/o-n-t-u-ngo-i-xa">!!! BUY CASSETTE FROM SUD SWAP AUDIO !!!</a></p>
+                            <div style="text-align: center;"><img src="https://f4.bcbits.com/img/0046748893_10.jpg" alt="MisuteriG" width="20%" height="20%"> <img src="https://f4.bcbits.com/img/0046748896_10.jpg" alt="Earth" width="20%" height="20%"><img src="https://f4.bcbits.com/img/0046748900_10.jpg" alt="MisuteriG" width="20%" height="20%"> <img src="https://f4.bcbits.com/img/a3749200973_10.jpg" alt="Earth" width="20%" height="20%"></div>
+                            <p style="text-align: center;"><a href="https://freshwatermedia.bandcamp.com/album/o-n-t-u-ngo-i-xa">!!! BUY CD FROM FRESHWATER MEDIA !!!</a></p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h2 style="text-align: center;">Other Releases:</h2>
+                <div class="releases-container">
+                    <div class="releases-grid">
+                        <!-- Vòng 1: Các album gốc -->
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=WQzGRQzMRxI"><img src="https://f4.bcbits.com/img/a2201476602_10.jpg" alt="Dưới chân đồi"></a>
+                            <p>Dưới chân đồi</p>
+                            <p>June, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://misuterig.bandcamp.com/album/odd-vibes"><img src="https://f4.bcbits.com/img/a3239872661_10.jpg" alt="Odd Vibes"></a>
+                            <p>Odd Vibes</p>
+                            <p>June & July, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://sudswapaudiobrewing.bandcamp.com/album/i486"><img src="https://f4.bcbits.com/img/a1792967564_1x1_700.avif" alt="i486"></a>
+                            <p>i486</p>
+                            <p>June, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=Jywstem-Z0k"><img src="Data/DTNX_A.jpg" alt="Đoàn Tàu Ngoài Xa"></a>
+                            <p>Đoàn Tàu Ngoài Xa</p>
+                            <p>April, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=KeFtSv4DkbA"><img src="Data/Stay_A.jpg" alt="Stay"></a>
+                            <p>Stay</p>
+                            <p>March, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://misuterig.bandcamp.com/track/faded"><img src="Data/Faded_S.jpg" alt="Faded"></a>
+                            <p>Faded</p>
+                            <p>February, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=ywMXsv_y4yY"><img src="Data/4D_A.jpg" alt="4D Magic"></a>
+                            <p>4D Magic</p>
+                            <p>February, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=EgVLz5oZ66k"><img src="Data/8b_A.jpg" alt="8 Bit Experience"></a>
+                            <p>8 Bit Experience</p>
+                            <p>December, 2025</p>
+                        </div>
+                        <!-- Vòng 2: Các album được sao chép để tạo hiệu ứng lặp -->
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=WQzGRQzMRxI"><img src="https://f4.bcbits.com/img/a2201476602_10.jpg" alt="Dưới chân đồi"></a>
+                            <p>Dưới chân đồi</p>
+                            <p>June, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://misuterig.bandcamp.com/album/odd-vibes"><img src="https://f4.bcbits.com/img/a3239872661_10.jpg" alt="Odd Vibes"></a>
+                            <p>Odd Vibes</p>
+                            <p>June & July, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://sudswapaudiobrewing.bandcamp.com/album/i486"><img src="https://f4.bcbits.com/img/a1792967564_1x1_700.avif" alt="i486"></a>
+                            <p>i486</p>
+                            <p>June, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=Jywstem-Z0k"><img src="Data/DTNX_A.jpg" alt="Đoàn Tàu Ngoài Xa"></a>
+                            <p>Đoàn Tàu Ngoài Xa</p>
+                            <p>April, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=KeFtSv4DkbA"><img src="Data/Stay_A.jpg" alt="Stay"></a>
+                            <p>Stay</p>
+                            <p>March, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://misuterig.bandcamp.com/track/faded"><img src="Data/Faded_S.jpg" alt="Faded"></a>
+                            <p>Faded</p>
+                            <p>February, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=ywMXsv_y4yY"><img src="Data/4D_A.jpg" alt="4D Magic"></a>
+                            <p>4D Magic</p>
+                            <p>February, 2026</p>
+                        </div>
+                        <div class="release-item">
+                            <a href="https://www.youtube.com/watch?v=EgVLz5oZ66k"><img src="Data/8b_A.jpg" alt="8 Bit Experience"></a>
+                            <p>8 Bit Experience</p>
+                            <p>December, 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <hr>
-    
-    <h2 style="text-align: center;">Other releases:</h2>
-    
-    <div style="text-align: center;">
+    <br>
 
-
-            <a href ="https://www.youtube.com/watch?v=WQzGRQzMRxI"><img src="https://f4.bcbits.com/img/a2201476602_10.jpg" alt="MisuteriG" width="15%" height="15%"></a>
-            <a href ="https://misuterig.bandcamp.com/album/odd-vibes"><img src="https://f4.bcbits.com/img/a3239872661_10.jpg" alt="MisuteriG" width="15%" height="15%"></a>
-            <a href ="https://sudswapaudiobrewing.bandcamp.com/album/i486"><img src="https://f4.bcbits.com/img/a1792967564_1x1_700.avif" alt="MisuteriG" width="15%" height="15%"></a>
-            <a href ="https://www.youtube.com/watch?v=Jywstem-Z0k"><img src="Data/DTNX_A.jpg" alt="MisuteriG" width="15%" height="15%"></a>
-            
-            
-            
-        </div>
-        <div style="text-align: center;">
-            <a href ="https://www.youtube.com/watch?v=KeFtSv4DkbA"><img src="Data/Stay_A.jpg" alt="MisuteriG" width="15%" height="15%"></a>
-            <a href ="https://misuterig.bandcamp.com/track/faded"><img src="Data/Faded_S.jpg" alt="MisuteriG" width="15%" height="15%"></a>
-            <a href ="https://www.youtube.com/watch?v=ywMXsv_y4yY"><img src="Data/4D_A.jpg" alt="MisuteriG" width="15%" height="15%"></a>
-            <a href ="https://www.youtube.com/watch?v=EgVLz5oZ66k"><img src="Data/8b_A.jpg" alt="MisuteriG" width="15%" height="15%"></a>
-            
-            
-        </div>
-    
-    
-
-    <footer>
-        <hr>
-        <p>    (̅_̅_̅_̅(̅_̅_̅_̅_̅_̅_̅_̅_̅̅_̅()ڪے~ ~</p>
+    <footer class="widget-header" style="margin: 0 10px 10px 10px;">
+        <p>(̅_̅_̅_̅(̅_̅_̅_̅_̅_̅_̅_̅_̅̅_̅()ڪے~ ~</p>
         <p><em>Somewhere in the world....</em></p>
         <p>(C) 2026 Misuteri G</p>
-        <img src = "Data/Rotating_earth_animated_transparent.gif" style="width: 128px;"
     </footer>
 
 </body>
