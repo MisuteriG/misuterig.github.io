@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Produkts</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {background: #020024;
+            background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(16, 16, 105, 1) 40%, rgba(0, 22, 26, 1) 100%);
+            margin: 0;
+            color: antiquewhite;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;}
+        a {color: aliceblue;
+            text-decoration: none;}
+        a:hover {text-decoration: underline;}
+        .container {display: flex;
+            flex-grow: 1;
+            flex-wrap: wrap;}
+        #navbar-container {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            background-image: url('Data/newbar.png');
+            background-size: 100% 100%;
+        }
+        .banner-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        #navbar-links {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #navbar-links a {
+            margin: 0 50px;
+            font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+            font-size: 16px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+        .left-column, .right-column {width: 50%;
+            padding: 1.5px;
+            box-sizing: border-box;}
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px; 
+        }
+        .product-item {
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px; /* Bo tròn góc */
+        }
+        .product-item img {
+            width: 100%;
+            border: 1px solid antiquewhite;
+            margin-bottom: 10px;
+            aspect-ratio: 1 / 1; 
+            object-fit: cover;   
+        }
+        .product-item h3 {
+            min-height: 4.5em; 
+            margin-bottom: 1em; 
+        }
+        .product-item > a {
+            margin-top: auto;
+        }
+        .widget-header {
+            background: #000000;
+            background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(87, 87, 87, 1) 50%, rgba(61, 61, 61, 1) 100%);
+            padding: 10px 15px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr; 
+            }
+        }
+        hr {
+            border-color: antiquewhite;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 100%;">
+        <img src="Data/mgbanner.png" alt="MisuteriG" class="banner-image">
+        <div id="navbar-container">
+            <div id="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="merch.html">Merch</a>
+                <a href="https://www.instagram.com/bgtj.vobaogia/">Art archive</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="padding: 20px;">
+        <h1 style="text-align: left; width: 100%;">PRODUKTS</h1>
+
+        <div class="product-grid">
+            <!-- Sản phẩm 1 -->
+            <div class="product-item">
+                <img src="https://misuterig.dpdns.org/Data/i4861.jpg" alt="i486 - JP LTD">
+                <h3>MisuteriG - i486 <br> Floppy Disk Release <br> (Japan Limited Edition)</h3>
+                <p>Label: Sud Swap Audio & Platano Press <br> Type: Floppy Disk <br> ID: SUD168 <br>Price: <u>¥3,500</u></p>
+                <a href="https://platanopress.theshop.jp/items/146005145">SOLD OUT - PLATANO PRESS</a>
+            </div>
+            <!-- Sản phẩm 2 -->
+            <div class="product-item">
+                <img src="https://f4.bcbits.com/img/0045309412_10.jpg" alt="i486 - INT">
+                <h3>MisuteriG - i486 <br> Floppy Disk Release</h3>
+                <p>Label: Sud Swap Audio <br> Type: Floppy Disk <br> ID: SUD168 <br>Price: <u>19.99 USD</u></p>
+                <a href="https://sudswapaudiobrewing.bandcamp.com/album/i486">SUD SWAP AUDIO</a>
+            </div>
+            <!-- Sản phẩm 3 -->
+            <div class="product-item">
+                <img src="https://misuterig.io.vn/Data/DTNX1.png" alt="Tên sản phẩm">
+                <h3>9G18 - Đoàn Tàu Ngoài Xa <br> Cassette</h3>
+                <p>Label: Sud Swap Audio <br> Type: Cassette <br> ID: SUD175 <br>Price: <u>19.99 USD </u></p>
+                <a href="https://sudswapaudiobrewing.bandcamp.com/album/o-n-t-u-ngo-i-xa">SUD SWAP AUDIO</a>
+            </div>
+            <!-- Sản phẩm 4 -->
+            <div class="product-item">
+                <img src="https://f4.bcbits.com/img/0046750468_10.jpg" alt="Tên sản phẩm">
+                <h3>9G18 - Đoàn Tàu Ngoài Xa <br> Cassette & Floppy Disk</h3>
+                <p>Label: Sud Swap Audio <br> Type: Cassette <br> ID: SUD175 <br>Price: <u>28.99 USD</u></p>
+                <a href="https://sudswapaudiobrewing.bandcamp.com/album/o-n-t-u-ngo-i-xa">SUD SWAP AUDIO</a>
+            </div>
+            <!-- Sản phẩm 5 -->
+            <div class="product-item">
+                <img src="https://f4.bcbits.com/img/0046748893_10.jpg" alt="Tên sản phẩm">
+                <h3>9G18 - Đoàn Tàu Ngoài Xa <br> CD</h3>
+                <p>Label: Freshwater Media <br> Type: CD <br> ID: WFWM-CD #0004  <br>Price: <u>10.00 USD </u></p>
+                <a href="https://freshwatermedia.bandcamp.com/album/o-n-t-u-ngo-i-xa">FRESHWATER MEDIA</a>
+            </div>
+            <!-- Để thêm sản phẩm, hãy sao chép và dán một khối <div class="product-item">...</div> ở đây -->
+        </div>
+    </div>
+    
+
+    <footer class="widget-header" style="margin: 10px; border-radius: 8px;">
+        <p>    (̅_̅_̅_̅(̅_̅_̅_̅_̅_̅_̅_̅_̅̅_̅()ڪے~ ~</p>
+        <p><em>Somewhere in the world....</em></p>
+        <p>(C) 2026 Misuteri G</p>
+    </footer>
+
+</body>
+</html>
