@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MisuteriG</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {background: #020024;
+            background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(16, 16, 105, 1) 40%, rgba(0, 22, 26, 1) 100%);
+            margin: 0;
+            color: antiquewhite;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;}
+        a {color: aliceblue;
+            text-decoration: none;}
+        a:hover {text-decoration: underline;}
+        .container {display: flex;
+            flex-grow: 1;
+            flex-wrap: wrap;}
+        #navbar-container {
+            position: relative;
+            width: 100%;
+            height: 30px; 
+            background-image: url('Data/newbar.png');
+            background-size: 100% 100%; 
+        }
+        .banner-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        #navbar-links {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #navbar-links a {
+            margin: 0 50px;
+            font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+            font-size: 16px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+        .left-column, .right-column {width: 50%;
+            padding: 20px;
+            box-sizing: border-box;}
+        @media (max-width: 768px) {
+            .left-column, .right-column {
+                width: 100%;
+            }}
+        .widget-header {
+            background: #000000;
+            background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(87, 87, 87, 1) 50%, rgba(61, 61, 61, 1) 100%);
+            padding: 10px 15px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        hr {
+            border-color: antiquewhite;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+        }
+        iframe {
+            width: 80%;
+            aspect-ratio: 16 / 9;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 100%;">
+        <img src="Data/mgbanner.png" alt="MisuteriG" class="banner-image">
+        <div id="navbar-container">
+            <div id="navbar-links">
+                <a href="index.html">Home</a>
+                <a href="merchs.html">Merch</a>
+                <a href="https://www.instagram.com/bgtj.vobaogia/">Art archive</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="padding: 20px; text-align: center;">
+        <div style="width: 100%;">
+            <h2>Oh... So you decided to go to the void...</h2>
+            <p>Sadly, nothing happend here, just like in Ba Sing Se, but you can visit my friends page for now:</p>
+            <a href="https://ccchecksum.neocities.org/ccchecksum">ccchecksum</a>
+            <a href="https://sachaos.bandcamp.com/">SachaOS</a>
+            <br>
+            <p>Also, go and check out some merchs in my Merch page ;)</p>
+            <p>Have fun!</p>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    <footer class="widget-header" style="margin: 10px; border-radius: 8px;">
+        <p>    (̅_̅_̅_̅(̅_̅_̅_̅_̅_̅_̅_̅_̅̅_̅()ڪے~ ~</p>
+        <p><em>Somewhere in the world....</em></p>
+        <p>(C) 2026 Misuteri G</p>
+    </footer>
+
+</body>
+</html>
